@@ -16,19 +16,18 @@
   
 
   <div class="acomodar" ng-app="formfunc" ng-controller="funccontroller">
-        <form id="form_cadastro" name="form_cadastro" method="post" action="">
-            <label for="nome">Nome: </label><input type="text" ng-model="nome" class="txt bradius"  />
-            <label for="mat">Matrícula: </label><input type="text" ng-model="mat" class="txt bradius"  />
-            <label for="email">E-mail: </label><input  type="text" ng-model="email" class="txt bradius" />
-            <label for="senha">Senha: </label><input   type="password" ng-model="senha" class="txt bradius" />
-            <div growl></div>
-            <input type="submit" ng-click="cadastrar(); alerta();" class="sb bradius" value="Cadastrar" />
+            <form id="form_cadastro" name="form_cadastro" method="post" action="">
+            <label for="nome">Nome: </label><input id="nome" type="text" class="txt bradius" name="nome"  />
+             <label for="mat">Matrícula: </label><input id="mat" type="text" class="txt bradius" name="mat"  />
+            <label for="email">E-mail: </label><input id="email" type="text" class="txt bradius" name="email" />
+            <label for="senha">Senha: </label><input  id="senha" type="password" class="txt bradius" name="senha"  />
+            <input type="submit" class="sb bradius" value="Cadastrar" name="button"/>
                   </form>
 </div>
 </body>
 </html>
 
-<!-- <?php
+<?php
 	if (isset($_POST["button"])) {
 		$nome = mysqli_real_escape_string($mysqli,$_POST["nome"]);
 		$mat = mysqli_real_escape_string($mysqli,$_POST["mat"]);
@@ -56,4 +55,4 @@
 		echo $mysqli->error;
 	}
 }
-?> -->
+?> 
