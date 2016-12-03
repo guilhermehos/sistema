@@ -4,6 +4,8 @@ include ("panel/globais.php");
 include ("panel/check.php");
 include ("inc_head.php");
 require ("config.php"); 
+include ("seguranca.php"); // chama rotina que verifica o usuario da pagina 
+protegePagina(); // protege as paginas para usuarios não autorizados acessarem
 
 session_start();
 $_SESSION['nomeuser'];

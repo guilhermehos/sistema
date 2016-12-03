@@ -1,12 +1,11 @@
 <?php 
 	require ("config.php");
 	include ("inc_head.php");
-
-session_start();
+	include ("seguranca.php");
+	protegePagina(); 
+	session_start();
 $_SESSION['nomeuser'];
 $nome = $_SESSION['nomeuser'];
-echo "<script> alert('Bem Vindo $nome!'); </script>";
-$_SESSION['idusuario'];
 
 $idrec = $_SESSION['idusuario']; // variavel para salvamento automatico de quem criou o evento
 
