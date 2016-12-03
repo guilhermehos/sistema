@@ -1,75 +1,61 @@
-<?php
-require ("config.php");
-include ("pdf/mpdf.php");
+<?php 
 
-$anoconsulta= $_GET['datapersonalizada'];
-
-$query1 = "SELECT count(ID) AS total FROM registros where ano='$anoconsulta'";
+  include_once("config.php");
+  /*$data = "<script>document.writeln(query_string)</script>";*/
+  $anoconsulta = $_GET['ano'];
+  $html = '<table border=1';  
+  $html .= '<thead>';
+  $html .= '<tr>';
+  $html .= '<th>Eventos</th>';
+  $html .= '<th>Quantidade</th>';
+  $html .= '<th>TOTAL</th>';
+  $html .= '</tr>';
+  $html .= '</thead>';
+  $html .= '<tbody>';
+  
+  
+  $query1 = "SELECT count(ID) AS total FROM registros where ano='$anoconsulta'";
     $result1 = mysqli_query($mysqli,$query1);
     $values = mysqli_fetch_assoc($result1);
     $num_rows = $values['total'];
+
+  $result_transacoes = "SELECT classificacao, count(ID) AS numero FROM registros where ano='$anoconsulta' GROUP BY classificacao";
+  $resultado_trasacoes = mysqli_query($mysqli, $result_transacoes);
+  while($row_transacoes = mysqli_fetch_assoc($resultado_trasacoes)){
+    $html .= '<tr><td>'.$row_transacoes['classificacao'] . "</td>";
+    $html .= '<td>'.$row_transacoes['numero'] . "</td>";
+    $html .= '<td>'.$values['total'] . "</td></tr>";    
+  }
   
- $query = "SELECT classificacao, count(ID) AS numero FROM registros where ano='$anoconsulta' GROUP BY classificacao";
-  $result=mysqli_query($mysqli,$query);
-    while($row = mysqli_fetch_array($result))
-    {
-              
-    
-      $relatorio = 
-        '<html>
-            <body>
-                <img src="css/imagens/logo.png">
+  $html .= '</tbody>';
+  $html .= '</table';
 
-                <div class="col-xs-12">  
-                
-                <table class="table table-striped table-bordered table-hover table-condensed table-responsive">
-                    <thead>
-                  <tr class="active">
-                      <th>Eventos</th>
-                      <th>Quantidade</th>
-                      <th>TOTAL</th>
-                  </tr>
-                      </thead>
-                            
-                      <tbody>
-                         
-                          <tr>
-                            <td>'.$row["classificacao"].'</td>
-                            <td>'.$row["numero"].'</td>
-                            <td>'.$num_rows.'</td>
-                          </tr>
-                          
-                         
-                         </tbody>
-                </table> 
-                </div>   
-      
+  
+  //referenciar o DomPDF com namespace
+  use Dompdf\Dompdf;
 
-                         
-                
-                    </body>
-                  </html>';
+  // include autoloader
+  require_once("dompdf/autoload.inc.php");
 
-                }
+  //Criando a Instancia
+  $dompdf = new DOMPDF();
+  
+  // Carrega seu HTML
+  $dompdf->load_html('
+      <img src="css/imagens/logo.png">
+      <h1 style="text-align: center;">Relatório Anual</h1>
+      '. $html .'
+    ');
 
-                  // criar objeto
-                  $mpdf = new mPDF();
+  //Renderizar o html
+  $dompdf->render();
 
-                  $mpdf->SetDisplayMode('fullpage');
-
-                  $mpdf->allow_charset_corversion = true;
-
-                  $mpdf->charset_in = 'UTF-8';
-
-                  $css = file_get_contents("css/bootstrap.css");
-
-                  $mpdf->WriteHTML($css,1);
-
-                  $mpdf->WriteHTML($relatorio);
-
-                  $mpdf->Output('Relatorio gerado','I');
-
-                  exit;
-                
-            
+  //Exibibir a página
+  $dompdf->stream(
+    "relatorio.pdf", 
+    array(
+      "Attachment" => false //Para realizar o download somente alterar para true
+    )
+  );
 ?>
+

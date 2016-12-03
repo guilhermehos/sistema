@@ -4,8 +4,6 @@
 	include ("seguranca.php");
 	protegePagina(); 
 	session_start();
-$_SESSION['nomeuser'];
-$nome = $_SESSION['nomeuser'];
 
 $idrec = $_SESSION['idusuario']; // variavel para salvamento automatico de quem criou o evento
 

@@ -68,7 +68,7 @@
                   
 
                       if ($idrec == $dados['iduser']) {
-                        echo "<a href=alterar.php?id=$id><button class='btn-group btn-warning btn-xs pull-left col-xs-1'>  Editar  </button></a>";
+                        echo "<a href=alterar.php?ano=$data><button class='btn-group btn-warning btn-xs pull-left col-xs-1'>  Editar  </button></a>";
                         echo "<button onclick='desejaApagar()' class='btn-group btn-danger btn-xs pull-left col-xs-1'>  Apagar  </button>";
                           
                           }else {

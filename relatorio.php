@@ -19,7 +19,7 @@
     <div class="container">
     <div class="col-xs-12">
       <h1>Relatório de <?php print $data ?> </h1>
-      <button onclick="geraRelatorio()" class="btn btn-default" name="relatorio">Gerar Relatorio</button>
+     <button onclick="geraRelatorio()" class="btn btn-default" name="personalizado">Gerar Relatório</button>
       <div id="chart_wrap">
         <div id="chart">
     </div>
@@ -180,5 +180,5 @@ $data = date('Y'); // Pega ano atual
                           };
 
           </script>
-
+ 
 
