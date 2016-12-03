@@ -8,9 +8,6 @@ include ("seguranca.php"); // chama rotina que verifica o usuario da pagina
 protegePagina(); // protege as paginas para usuarios não autorizados acessarem
 
 session_start();
-$_SESSION['nomeuser'];
-$nome = $_SESSION['nomeuser'];
-echo "<script> alert('Bem Vindo $nome!'); </script>";
 $_SESSION['idusuario'];
 
 $idrec = $_SESSION['idusuario']; // variavel para salvamento automatico de quem criou o evento
