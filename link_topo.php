@@ -3,13 +3,16 @@
 	include ("inc_head.php");
 
 session_start();
+$_SESSION['nomeuser'];
+$nome = $_SESSION['nomeuser'];
+echo "<script> alert('Bem Vindo $nome!'); </script>";
 $_SESSION['idusuario'];
 
 $idrec = $_SESSION['idusuario']; // variavel para salvamento automatico de quem criou o evento
 
 if (isset($_GET["action"]) AND $_GET["action"] == "sair") {
   session_destroy();
-  header ("Location: localhost/sistema_teste/index.php");
+  header ("Location://localhost/sistema/index.php");
 }
 
 

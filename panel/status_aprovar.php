@@ -1,7 +1,6 @@
 <?php
 
 include("../config.php");
-include ("../panel/globais.php");
 
 ?>
 
@@ -11,7 +10,7 @@ include ("../panel/globais.php");
 	$id = $_GET['id'];
 	$select = $mysqli -> query("UPDATE usuarios SET status='1' WHERE ID='$id'");
 
-	echo "<script> location.href='../panel/admin.php?pagina=1'; </script>";
+	echo "<script> location.href='../admin.php?pagina=1'; </script>";
 	
 		
 

@@ -53,12 +53,15 @@
 				session_start();
 				$_SESSION["nivel"] = 1;
 				$_SESSION['idusuario']=$iduser; 
-			header("Location://143.106.163.126/sistema_teste/admin.php?");  //MUDAR LOCAL 
+				$_SESSION['nomeuser']=$nome; 
+			header("Location://localhost/sistema/admin.php?");  //MUDAR LOCAL 
+
 			}else {
 				session_start();
 				$_SESSION["nivel"] = 0;
 				$_SESSION['idusuario']=$iduser; 
-			header("Location://143.106.163.126/sistema_teste/registro.php?");  //MUDAR LOCAL	
+				$_SESSION['nomeuser']=$nome;
+			header("Location://localhost/sistema/registro.php?");  //MUDAR LOCAL	
 		           } 
 		}
 	}else {
