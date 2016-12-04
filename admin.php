@@ -10,11 +10,11 @@ protegePagina(); // protege as paginas para usuarios não autorizados acessarem
 session_start();
 $_SESSION['idusuario'];
 
-$idrec = $_SESSION['idusuario']; // variavel para salvamento automatico de quem criou o evento
+
 
 if (isset($_GET["action"]) AND $_GET["action"] == "sair") {
   session_destroy();
-  header ("Location: http://localhost/sistema/index.php");
+  header ("Location://localhost/sistema/index.php");
 }
 
 ?>

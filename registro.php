@@ -1,7 +1,6 @@
 <?php 
 
 require ("config.php");
-require ("panel/protect.php");
 include ("inc_head.php");
 include ("link_topo.php");
 ?>
@@ -14,7 +13,7 @@ include ("link_topo.php");
     <form name="form_registro" method="post" enctype="multipart/form-data" action="">
       <div class="col-xs-12 form-group">
         <div class="col-xs-12">
-          <label for="iduser" name="iduser" id="iduser" class="hidden">Seu ID: <?php echo "$idrec"?></label>
+          <label for="iduser" name="iduser" id="iduser">Seu ID: <?php echo "$idrec"?></label><br />
           <label for="reg_nome_ativ">Nome da Atividade:</label>
           <input class="form-control" placeholder="Por Exemplo: Corte e Costura da Terceira Idade" name="reg_nome_ativ" type="text" id="reg_nome_ativ" size="100" />
         </div>

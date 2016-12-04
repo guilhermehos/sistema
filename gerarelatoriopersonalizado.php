@@ -1,4 +1,6 @@
 <?php 
+include ("seguranca.php"); // chama rotina que verifica o usuario da pagina 
+protegePagina(); // protege as paginas para usuarios não autorizados acessarem
 
   include_once("config.php");
   /*$data = "<script>document.writeln(query_string)</script>";*/
@@ -24,9 +26,9 @@
   while($row_transacoes = mysqli_fetch_assoc($resultado_trasacoes)){
     $html .= '<tr><td>'.$row_transacoes['classificacao'] . "</td>";
     $html .= '<td>'.$row_transacoes['numero'] . "</td>";
-    $html .= '<td>'.$values['total'] . "</td></tr>";    
+     
   }
-  
+  $html .= '<td>'.$values['total'] . "</td></tr>";  
   $html .= '</tbody>';
   $html .= '</table';
 

@@ -1,8 +1,10 @@
 <?php 
 	require ("config.php");
-	require ("panel/protect.php");
   include ("inc_head.php");
   include ("link_topo.php"); 
+ 
+
+$idrec = $_SESSION['idusuario']; // variavel para salvamento automatico de quem criou o evento
   $data = date('Y'); // Pega ano atual
 ?>
 <?php
