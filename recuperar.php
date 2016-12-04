@@ -18,8 +18,6 @@
   <div class="acomodar">
             <form id="form_cadastro" name="form_cadastro" action="" method="post">
       
-           
-            <label for="mat">Matrícula: </label><input id="mat" type="text" class="txt bradius" name="mat"  />
             <label for="email">E-mail: </label><input id="email" type="text" class="txt bradius" name="email" />
             
             <input type="submit" class="sb bradius" value="Recuperar" name="button"/>
@@ -31,23 +29,88 @@
 
 <?php
 if (isset($_POST["button"])) {
-    $mat = mysqli_real_escape_string($mysqli,$_POST["mat"]);
 	$email = mysqli_real_escape_string($mysqli,$_POST["email"]);
+
+	if ($email == "") {
+			echo "<script> alert ('Preencha o E-mail!'); </script>";
+			return true;
+		} 
     
     
-      	$select = $mysqli->query("SELECT * FROM usuarios WHERE email='$email' OR mat='$mat'");
+      	$select = $mysqli->query("SELECT * FROM usuarios WHERE email='$email'");
+		if ($select){
 		$row = $select->num_rows;
-		$get = $select->fetch_array();
-		$emailenvia = $get['email'];
-		$matenvia = $get['mat'];
-		$senhaenvia = $get['senha'];
+		if($row > 0) {
+			$get = $select->fetch_assoc();
 
-		$_SESSION['emailuser']=$emailenvia; 
-		$_SESSION['mat'] = $matenvia;
-		$_SESSION['senha']=$senhaenvia; 
-			header("Location://localhost/sistema/recuperando.php?");  //MUDAR LOCAL 
+		$nome = $get['nome'];
+		$email = $get['email'];
+		$mat = $get['mat'];
+		$senha = $get['senha'];
 
-		return true;
+
+require 'phpmailer/PHPMailerAutoload.php';
+	
+	$Mailer = new PHPMailer();
+	
+	//Define que será usado SMTP
+	$Mailer->IsSMTP();
+	
+	//Enviar e-mail em HTML
+	$Mailer->isHTML(true);
+	
+	//Aceitar carasteres especiais
+	$Mailer->Charset = 'UTF-8';
+
+	$Mailer->SMTPDebug  = 1; 
+	
+	//Configurações
+	$Mailer->SMTPAuth = true;
+	$Mailer->SMTPSecure = 'ssl'; //ssl
+	
+	//nome do servidor
+	$Mailer->Host = "smtp.gmail.com";
+	//Porta de saida de e-mail 
+	$Mailer->Port = 465; //465
+	
+	//Dados do e-mail de saida - autenticação
+	$Mailer->Username = "noreplyesportivos@gmail.com";
+	$Mailer->Password = "gui395778";
+	
+	//E-mail remetente (deve ser o mesmo de quem fez a autenticação)
+	$Mailer->From = "noreplyesportivos@gmail.com";
+	
+	//Nome do Remetente
+	$Mailer->FromName = 'Suporte CIS';
+	
+	//Assunto da mensagem
+	$Mailer->Subject = 'Titulo - Recuperar Senha';
+	
+	//Corpo da Mensagem
+	$Mailer->Body .= "Prezado ".$nome." segue E-mail: ".$email." e Senha: ".$senha." ";
+	
+	//Corpo da mensagem em texto
+	$Mailer->AltBody = 'conteudo do E-mail em texto';
+	
+	//Destinatario 
+	$Mailer->AddAddress ($email);
+	
+	if($Mailer->Send()){
+		echo "E-mail enviado com sucesso";
+	}else{
+		echo "Erro no envio do e-mail: " . $Mailer->ErrorInfo;
+	}
+
+
+echo "<script> alert ('Verifique seu e-mail!'); location.href='index.php' </script>";
+	
       }
+      else {
+      	echo "<script> alert ('Nenhum e-mail encontrado!') </script>";
+      }
+
+  }
+
+}
     	
 ?> 
