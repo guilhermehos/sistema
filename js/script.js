@@ -26,7 +26,7 @@ app.controller('funccontroller', function($scope,$http){
 
 var app = angular.module('myApp', []);
 app.controller('inicioCtrl', function($scope) {
-    $scope.iniciar = "A pagina inicio mostra os registros de eventos que estão marcados para acontecer nos proximos dias.",
+    $scope.iniciar = "A pagina inicio mostra os registros de eventos que já aconteceram.",
     $scope.insere = "A pagina inserir registro permite ao usuario criar um novo evento determinando data, hora, local, quantidade de publico e até colocar imagens anexadas, Obrigatoriamente preencha os campos de tipo de atividade e classificação, local onde será a atividade,faixa etaria e tipo de publico, nos campos de data selecione mes e ano e escolha o dia pelo calendario que surge na tela, Caso queira selecionar uma imagem , clique em Escolher arquivos, depois basta salvar registro.",
     $scope.relatorio = "A pagina relatorio permite que voce tire relatorios como por exemplo, quantos eventos aconteceram este ano, Caso queira apenas deste ano, basta clicar em Gerar relatorio logo acima do grafico como mostra na primeira imagem, caso queira um relatorio personalizado com outro ano, basta selecionar mais abaixo o ano e clicar enviar para atualizar a pagina, depois clique em gerar relatorio personalizado.",
     $scope.download = "A pagina de Download basta digitar o numero do evento, que pode ser encontrado na pagina inicial como mostra na imagem abaixo. "
