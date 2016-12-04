@@ -34,7 +34,7 @@
 						</div>
 						<div class="col-xs-12 form-group">
 							<label for="senha"> </label><input  id="senha" type="password" class="txt form-control input-lg" name="senha" value="" placeholder="Senha" />
-							<a href="recuperar.php" title="Recuperar senha!">Esqueci minha senha?</a>
+							<a href="recuperar.php" class="color2" title="Recupera senha!">Esqueci minha senha?</a>
 						</div>
 						<div class="col-xs-12 form-group">
 							<input type="submit" class="bgColor1 bgHover2 btn btn-lg input-lg form-control" value="Entrar" name="button"/>

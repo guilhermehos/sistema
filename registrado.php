@@ -1,7 +1,6 @@
 ﻿<?php
 
 	require ("config.php");
-  require ("panel/protect.php");
   include ("inc_head.php");
   include ("link_topo.php")
 	

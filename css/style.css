@@ -8,7 +8,7 @@ General Info
 Type
 Style Sheet
 Size
-4 KB (4,391 bytes)
+4 KB (4,232 bytes)
 Storage used
 0 bytesOwned by someone else
 Location
@@ -16,16 +16,15 @@ Integração
 Owner
 Douglas Pereira
 Modified
-1:40 PM by Douglas Pereira
+4:57 PM by Douglas Pereira
 Opened
-1:47 PM by me
+5:13 PM by me
 Created
-1:40 PM
+4:57 PM
 Description
 Add a description
 Download permissions
 Viewers can download
-
 New Team Drive
 
 *{
@@ -47,7 +46,9 @@ body{
 section { padding: 20px 0; }
 
 .bgColor1 { background-color: #333 !important; color: #FFf !important; }
-.bgColor2, .bgHover2:hover { background-color: #8B2500!important; }
+.bgColor2, .bgHover2:hover { background-color: #8B2500 !important; }
+.color1 { color: #333 !important; }
+.color2 { color: #8B2500 !important; }
 
 .bottom { margin-bottom: 10px; }
 .top { margin-top: 10px; }
@@ -174,25 +175,7 @@ border-radius: 4px;
 	-webkit-transition-duration:1s;
 	border-bottom: 3px solid #010101;
 } */
-#local{
-	height:300px; 
-	width:300px; 
-	margin-top:5px; 
-	float:left;
-}
-#faixa{
-	height:300px; 
-	width:250px; 
-	margin-top:5px; 
-	float:left;
-}
-#publico{
-	height:300px; 
-	width:300px; 
-	margin-top:5px; 
-	margin-left:5px;
-	float:left;
-}
+
 .registro{
 	margin:0 auto;
 	width:1200px;

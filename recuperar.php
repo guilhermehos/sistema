@@ -8,22 +8,36 @@
 </head>
 
 <body>
-
-       <div id="cadastrar" ><a href="index.php" title="Faça login!">Login &raquo;</a></div>
-		<div id="login" class="form bradius">
-  			<div class="logo"><img src="css/imagens/logo.png" width="200" height="58" /></div>
-
-  
-
-  <div class="acomodar">
-            <form id="form_cadastro" name="form_cadastro" action="" method="post">
-      
-            <label for="email">E-mail: </label><input id="email" type="text" class="txt bradius" name="email" />
-            
-            <input type="submit" class="sb bradius" value="Recuperar" name="button"/>
-                 
-                  </form>
-</div>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <a href="cadastro.php" title="Cadastre-se e faça parte da nossa equipe!">
+            <button class="btn btn-primary pull-right">  Cadastre-se &raquo;  </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 login">
+          <div class="col-xs-12">
+            <img src="css/imagens/logo.png" class="img-responsive center-block bottom top" />
+          </div>
+          <form id="form_cadastro" name="form_cadastro" action="" method="post">
+            <div class="col-xs-12 form-group">
+              <label for="email"> </label><input id="email" type="email" class="txt form-control input-lg" name="email" value="" placeholder="E-mail" />
+            </div>
+            <div class="col-xs-12 form-group">
+              <input type="submit" class="bgColor1 bgHover2 btn btn-lg input-lg form-control" value="Recuperar" name="button"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
 

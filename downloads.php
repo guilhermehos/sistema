@@ -3,8 +3,6 @@
 	require ("config.php");
   include ("inc_head.php");
   include ("link_topo.php");	
-
-
 ?>
 
 
