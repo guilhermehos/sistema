@@ -69,7 +69,7 @@
 		if($row > 0) {
 			echo "<script> alert ('Já existe um usuário com este e-mail!'); </script>";
 		} else {
-			$insert = $mysqli->query("INSERT INTO `usuarios`(`nome`, `mat`, `email`, `senha`, `nivel`, `status`) VALUES ('$nome', '$mat', '$email', '".md5($senha)."', '0', '0')");
+			$insert = $mysqli->query("INSERT INTO `usuarios`(`nome`, `mat`, `email`, `senha`, `nivel`, `status`) VALUES ('$nome', '$mat', '$email', '$senha', '0', '0')");
 			if ($insert) {
 				echo "<script> alert ('Usuário registrado com sucesso!'); location.href='index.php' </script>";
 			} else {

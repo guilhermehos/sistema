@@ -55,7 +55,7 @@
 <?php
 	if (isset($_POST["button"])) {
 		$email = mysqli_real_escape_string($mysqli, $_POST["email"]);
-		$senha = mysqli_real_escape_string($mysqli, md5($_POST["senha"]));
+		$senha = mysqli_real_escape_string($mysqli, $_POST["senha"]);
 		
 		if($email == "" || $senha == "") {
 			echo "<script> alert('Preencha todos os campos!'); </script>";
