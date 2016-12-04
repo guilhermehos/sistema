@@ -96,7 +96,7 @@ include ("link_topo.php");
         </div>
       </div>
 
-      <div class="col-xs-12 col-sm-4 form-group">
+      <!-- <div class="col-xs-12 col-sm-4 form-group">
         <label class="col-xs-12">Local onde ocorreu a atividade:</label>
         <div id="local" class="checkbox col-xs-12">
           <label class="col-xs-12">
@@ -168,7 +168,7 @@ include ("link_topo.php");
           <input type="checkbox" name="p[]"  value="Instituicao" <?php in_array('Instituicao', $checkedp) ? print "checked": ""; ?>/>Instituição
         </label>
       </div>
-    </div>
+    </div> -->
 
     <div class="col-xs-12" id="mesano">
       <div id="mes" class="col-xs-6 col-sm-4 col-md-2 form-group">
@@ -257,7 +257,7 @@ include ("link_topo.php");
       <div class="col-xs-12 col-sm-6 form-group">
         <label for="pub_previsto">Público previsto:</label><!-- <input name="pub_previsto" type="text" class="form-control" id="pub_previsto" size="100" />  -->
 
-        <input type="range" name="pub_previsto" min="0" max="5000" value="0" id="pub_previsto" step="1"  onchange="showValue(this.value)" />
+        <input type="range" name="pub_previsto" min="0" max="5000" value="<?php echo $dados['pub_previsto']; ?>" id="pub_previsto" step="1"  onchange="showValue(this.value)" />
         <script type="text/javascript">
          function showValue(number)
          {
@@ -271,7 +271,7 @@ include ("link_topo.php");
     <div class="col-xs-12 col-sm-6 form-group">
       <label for="pub_efetivo">Público efetivo:</label><!--<input name="pub_efetivo" type="text" class="form-control" id="pub_efetivo" size="100" />  -->
 
-      <input type="range" name="pub_efetivo" min="0" max="5000" value="0" id="pub_efetivo" step="1"  onchange="showValue2(this.value)" />
+      <input type="range" name="pub_efetivo" min="0" max="5000" value="<?php echo $dados['pub_efetivo']; ?>" id="pub_efetivo" step="1"  onchange="showValue2(this.value)" />
       <script type="text/javascript">
        function showValue2(number)
        {
@@ -284,11 +284,11 @@ include ("link_topo.php");
 </div>
 
 
-<div class="col-xs-12">
+<!-- <div class="col-xs-12">
   <div class="col-xs-12 form-group">
     <label for="imagem">Selecione imagens: <font color="#999999"> ( Imagens sobre o evento )</font></label><input name="imagem[]" type="file" id="imagem" multiple />
   </div></div>
-
+ -->
   <div class="col-xs-12 form-group">
 
     <input type="submit" class="btn bgColor1 bgHover2 center-block" value="Atualizar" name="button"/>
