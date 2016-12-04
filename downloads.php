@@ -11,34 +11,36 @@
 </head>
 
 <body>
+<section>
 <div class="container">
-        <div class="row">
-            	  <table class="table table-striped table-bordered table-hover table-condensed table-responsive">
-                                   
-                                     
-                                 <thead>
-                                 <tr>
-                                     <th align-text="center">DOWNLOADS</th>
-               
-                                 </tr>
-                                     </thead>  
-                                 
-                                </table> 
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="col-xs-12">
+       <table class="table table-striped table-bordered table-hover table-condensed table-responsive">
+
+         <thead>
+           <tr>
+             <th align-text="center">DOWNLOADS</th>
+
+           </tr>
+         </thead>  
+
+       </table> 
+     </div>
                                 <!-- <div id="Down" class="form bradius"> 
                                 <form id="form_down" name="form_login" method="post" action="">
                                 <label for="num_registro">Digite o numero de registro do evento: </label><input  id="id_registrado" type="text" class="txt bradius" name="id_registrado" value="" />
                                                                <input type="submit" class="sb bradius" value="Enviar" name="button"/>
                                                                </form> -->
-
+                              <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4 text-center">
                                <form class="navbar-form navbar-left" role="search" id="form_down" name="form_login" method="post" action="">
-                                  <div class="form-group">
+                                  <div class="form-group center-block">
                                   <label for="num_registro">Digite o numero de registro do evento: </label>
-                                  <input id="id_registrado" name="id_registrado" type="text" class="form-control" placeholder="15" value="">
-                                  <input type="submit" class="btn btn-default" value="Enviar" name="button">
+                                  <input id="id_registrado" name="id_registrado" type="text" class="form-control bottom" placeholder="15" value="">
+                                  <input type="submit" class="btn bgColor1 bgHover2" value="Enviar" name="button">
                                   </div>
-                                      
                               </form>
-                 </div>
+                              </div>
                  <?php
                   if (isset($_POST["button"])) {
                     $id_registrado = mysqli_real_escape_string($mysqli, $_POST["id_registrado"]);
