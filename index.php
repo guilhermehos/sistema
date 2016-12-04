@@ -17,6 +17,7 @@
         <form id="form_login" name="form_login" method="post" action="">
             <label for="email">E-mail: </label><input id="email" type="text" class="txt bradius" name="email" value="" />
             <label for="senha">Senha: </label><input  id="senha" type="password" class="txt bradius" name="senha" value="" />
+            <a href="recuperar.php" title="Recuperar senha!">Esqueci minha senha?</a>
             <input type="submit" class="sb bradius" value="Entrar" name="button"/>
                   </form>
        <!--login-->
