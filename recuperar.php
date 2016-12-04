@@ -74,11 +74,11 @@ require 'phpmailer/PHPMailerAutoload.php';
 	$Mailer->Port = 465; //465
 	
 	//Dados do e-mail de saida - autenticação
-	$Mailer->Username = "noreplyesportivos@gmail.com";
-	$Mailer->Password = "gui395778";
+	$Mailer->Username = "noreplycisguanabara@gmail.com";
+	$Mailer->Password = "admin020918";
 	
 	//E-mail remetente (deve ser o mesmo de quem fez a autenticação)
-	$Mailer->From = "noreplyesportivos@gmail.com";
+	$Mailer->From = "noreplycisguanabara@gmail.com";
 	
 	//Nome do Remetente
 	$Mailer->FromName = 'Suporte CIS';

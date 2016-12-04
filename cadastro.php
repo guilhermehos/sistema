@@ -7,25 +7,50 @@
 <title>Cadastro</title>
 </head>
 
-<body>
-
-       <div id="cadastrar" ><a href="index.php" title="Faça login!">Login &raquo;</a></div>
-		<div id="login" class="form bradius">
-  			<div class="logo"><img src="css/imagens/logo.png" width="200" height="58" /></div>
-
+<body>	
+<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<a href="index.php" title="Faça login!">
+						<button class="btn btn-success pull-right">  Login &raquo;  </button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
   
-
-  <div class="acomodar" ng-app="formfunc" ng-controller="funccontroller">
-            <form id="form_cadastro" name="form_cadastro" method="post" action="">
-            <label for="nome">Nome: </label><input id="nome" type="text" class="txt bradius" name="nome"  />
-             <label for="mat">Matrícula: </label><input id="mat" type="text" class="txt bradius" name="mat"  />
-            <label for="email">E-mail: </label><input id="email" type="text" class="txt bradius" name="email" />
-            <label for="senha">Senha: </label><input  id="senha" type="password" class="txt bradius" name="senha"  />
-            <input type="submit" class="sb bradius" value="Cadastrar" name="button"/>
-                  </form>
-</div>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 login">
+					<div class="col-xs-12">
+					<img src="css/imagens/logo.png" class="img-responsive center-block bottom top" />
+					</div>
+					<form id="form_login" name="form_login" method="post" action="">
+						<div class="col-xs-12 form-group">
+							<label for="nome"> </label><input id="email" type="text" class="txt form-control input-lg" name="nome" value="" placeholder="Nome" />
+						</div>
+						<div class="col-xs-12 form-group">
+							<label for="mat"> </label><input id="mat" type="number" class="txt form-control input-lg" name="mat" value="" placeholder="Matrícula" />
+						</div>
+						<div class="col-xs-12 form-group">
+							<label for="email"> </label><input id="email" type="email" class="txt form-control input-lg" name="email" value="" placeholder="E-mail" />
+						</div>
+						<div class="col-xs-12 form-group">
+							<label for="senha"> </label><input  id="senha" type="password" class="txt form-control input-lg" name="senha" value="" placeholder="Senha" />
+						</div>
+						<div class="col-xs-12 form-group">
+							<input type="submit" class="bgColor1 bgHover2 btn btn-lg input-lg form-control" value="Cadastrar" name="button"/>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
+
 
 <?php
 	if (isset($_POST["button"])) {

@@ -1,3 +1,33 @@
+style.css
+Details
+Activity
+style.css
+Sharing Info
+
+General Info
+Type
+Style Sheet
+Size
+4 KB (4,391 bytes)
+Storage used
+0 bytesOwned by someone else
+Location
+Integração
+Owner
+Douglas Pereira
+Modified
+1:40 PM by Douglas Pereira
+Opened
+1:47 PM by me
+Created
+1:40 PM
+Description
+Add a description
+Download permissions
+Viewers can download
+
+New Team Drive
+
 *{
 	margin:0;
 	padding:0;
@@ -11,8 +41,16 @@ body{
 	font:300 16px Oswald;
 	margin:0;
 	padding:0;
-	background: linear-gradient(#ccc, #fff) no-repeat;
+	background: linear-gradient(#fcf8e3, #FFF) no-repeat;
 }
+
+section { padding: 20px 0; }
+
+.bgColor1 { background-color: #333 !important; color: #FFf !important; }
+.bgColor2, .bgHover2:hover { background-color: #8B2500!important; }
+
+.bottom { margin-bottom: 10px; }
+.top { margin-top: 10px; }
 
 #chart_wrap {
     border:1px solid gray;
@@ -80,13 +118,12 @@ border-radius: 4px;
 #topo {
 	height:120px;
 }
-#login{
-	width:300px;
+
+.login{
 	margin:0 auto;
 	position:relative;
-	top:200px;
+	top:50%;
 	border:1px solid #f1f1f1;
-	padding:15px;
 }
 
 .menu-fixo .row .container{ 
@@ -155,27 +192,6 @@ border-radius: 4px;
 	margin-top:5px; 
 	margin-left:5px;
 	float:left;
-}
-
-#mesano{
-	height:80px; 
-	width:425px; 
-	margin-right:300px;
-	float: left;
-}
-
-#mes{
-	height:20px; 
-	width:200px; 
-	margin-top:5px; 
-	float:left;
-}
-
-#ano{
-	height:20px; 
-	width:200px; 
-	margin-top:5px; 
-	float:right;
 }
 .registro{
 	margin:0 auto;
