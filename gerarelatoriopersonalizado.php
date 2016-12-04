@@ -24,9 +24,10 @@
   while($row_transacoes = mysqli_fetch_assoc($resultado_trasacoes)){
     $html .= '<tr><td>'.$row_transacoes['classificacao'] . "</td>";
     $html .= '<td>'.$row_transacoes['numero'] . "</td>";
-    $html .= '<td>'.$values['total'] . "</td></tr>";    
+   
   }
   
+  $html .= '<td>'.$values['total'] . "</td></tr>";   
   $html .= '</tbody>';
   $html .= '</table';
 

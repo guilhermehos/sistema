@@ -18,14 +18,18 @@
 
 						<p ng-show="myVar">
 							1 - INICIO: {{iniciar}}
-							<img src="css/imagens/ajuda_imgs/ajuda.png" class="img-responsive" />
+							<img src="css/imagens/ajuda_imgs/inicio.png" class="img-responsive" />
 						</p>
+
 
 
 						<button class="but1 top but-rc list-group-item" align="center" ng-click="toggle2()"> + Sobre a página Inserir Registro</button>
 
 						<p ng-show="myVar2">
 							2 - INSERIR REGISTRO: {{insere}}
+							<img src="css/imagens/ajuda_imgs/registros1.png" class="img-responsive" />
+						<br />
+							<img src="css/imagens/ajuda_imgs/upimg.png" class="img-responsive" />
 						</p>
 
 
@@ -33,13 +37,18 @@
 
 						<p ng-show="myVar3">
 							3 - RELATORIO: {{relatorio}}
+							<img src="css/imagens/ajuda_imgs/gerarrel.png" class="img-responsive" />
+						<br />
+							<img src="css/imagens/ajuda_imgs/gerarrelatorio.png" class="img-responsive" />
 						</p>
-
 
 						<button class="but1 top list-group-item" text-align="center" ng-click="toggle4()"> + Sobre a página Downloads</button>
 
 						<p ng-show="myVar4">
 							4 - DOWNLOAD: {{download}}
+							<img src="css/imagens/ajuda_imgs/down.png" class="img-responsive" />
+							<br />
+							<img src="css/imagens/ajuda_imgs/registroid.png" class="img-responsive" />
 						</p>
 
 					</div>
